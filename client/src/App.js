@@ -64,7 +64,7 @@ function App() {
               <Route exact path="/register">
                 <Register />
               </Route>
-              <Route exact path="/login">
+              <Route exact path="/ClientSignUp">
                 <Login />
               </Route>
               <Route exact path="class-list">

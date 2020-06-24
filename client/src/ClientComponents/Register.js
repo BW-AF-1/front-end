@@ -46,6 +46,7 @@ const Register = () => {
     axiosWithAuth()
       .post("/clients/register", clientState)
       .then((res) => {
+        localStorage.setItem("token", res.data.payload);
         console.log(res.data);
         setPost(res.data);
         setClientState({

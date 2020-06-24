@@ -111,7 +111,7 @@ const ClientPage = () => {
       </Info>
       <Hr />
       <Footer>
-        <Link to="/login">
+        <Link to="/ClientSignUp">
           <Button className="forClients">For Clients</Button>
         </Link>
         <Link to="/register">

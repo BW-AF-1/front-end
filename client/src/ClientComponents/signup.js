@@ -48,6 +48,7 @@ const ClientSignUp = () => {
     axiosWithAuth()
       .post("/clients/login", clientState)
       .then((res) => {
+        localStorage.setItem("token", res.data.payload);
         console.log(res.data);
         setPost(res.data);
         setClientState({
