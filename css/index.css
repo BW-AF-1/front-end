@@ -270,3 +270,92 @@ html,
 body {
   height: 100%;
 }
+button {
+  margin: auto 0;
+  background-color: #FF6900;
+  border-radius: 1rem;
+  border-color: black;
+}
+form {
+  border: 2px solid black;
+  border-radius: 5%;
+  margin-left: 5%;
+  padding: 2%;
+  line-height: 0.2;
+}
+nav {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: auto 0;
+}
+nav a {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: auto 0;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  justify-content: space-between;
+}
+section {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: auto 0;
+  margin-top: 10%;
+}
+section h1 {
+  padding: 5%;
+  font-size: 40px;
+  text-align: center;
+}
+h2 {
+  text-decoration: underline;
+  font-size: 2rem;
+  text-align: center;
+  margin: auto 0;
+  padding: 5%;
+}
+.Mission-Content {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto 0;
+}
+.Mission-Content h1 {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Mission-Content li {
+  display: flex;
+  flex-flow: nowrap;
+  margin: 5%;
+  justify-items: center;
+  font-size: x-large;
+  color: #FF6900;
+}
+.Fitness-Levels {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto 0;
+}
+.Fitness-Levels div {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto 0;
+}
+header h1 {
+  margin: auto 0;
+  text-align: center;
+  font-size: 3rem;
+}
+.Main-Container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
