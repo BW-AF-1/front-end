@@ -128,7 +128,11 @@ const ImageBackground = styled.image`
         <Link to="/register">
           <Button className="forClients">New?</Button>
         </Link>
-        <Instructors>For Instructors</Instructors>
+
+        <Link to="/InstructorLogin"> <Instructors>For Instructors</Instructors> </Link>
+        
+
+
         <Link to="/ClassSearch">
           <Button className="classSearch">Search Classes</Button>
         </Link>

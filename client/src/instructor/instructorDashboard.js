@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar, Nav} from 'reactstrap';
 import CreateClass from './createClassForm'
 import img from '../imageFolder/Image.jpg'
 

@@ -12,7 +12,10 @@ import Register from "./ClientComponents/Register";
 import Login from "./ClientComponents/Login";
 import ClassSearch from "./ClientComponents/ClassSearch";
 import InstructorForm from './instructor/instructorForm';
-import InstructorDashboard from './instructor/instructorDashboard'
+import InstructorDashboard from './instructor/instructorDashboard';
+import InstructorClasses from './instructor/InstructorClasses';
+import InstructorCreate from './instructor/InstructorCreate';
+import InstructorLogin from './instructor/InstructorLogin';
 
 function App() {
   // setting up state and functions for InitialContext
@@ -58,6 +61,17 @@ function App() {
                   <button>Client</button>
                 </Link>
               </Route>
+
+              <Route exact path="/InstructorLogin">
+                <InstructorLogin />
+              </Route>
+              <Route exact path="/InstructorClasses">
+                <InstructorClasses />
+              </Route>
+              <Route exact path="/InstructorSign">
+                <InstructorCreate />
+              </Route>
+
 
               <Route exact path="/ClientLandingPage">
                 <ClientLandingPage />
