@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import * as Yup from "yup";
 import { Link, Route } from "react-router-dom";
-import Client from "./clientlogin";
+import ClientLogin from "./ClientLogin";
 import styled from "styled-components";
 
 const ClientSignUp = () => {
@@ -134,15 +134,22 @@ const ClientSignUp = () => {
             <p>askdjfhaksdhf</p>
           </Img>
           <ClientLog>
-            <Client />
+            <ClientLogin />
           </ClientLog>
         </Body>
-        {/* <div className="head">
+      </div>
+    </>
+  );
+};
+
+export default ClientSignUp;
+
+/* <div className="head">
           <div className="title">Anywhere Fitness</div>
         </div>
-        <Client /> */}
-      </div>
-      <form onSubmit={handleSubmit}>
+        <Client /> */
+
+/* <form onSubmit={handleSubmit}>
         <div className="username">
           <label htmlFor="username">
             User Name:
@@ -170,15 +177,9 @@ const ClientSignUp = () => {
               <p className="error">{errors.password}</p>
             ) : null}
           </label>
+        </div> */
+/* <div className="submit"> */
+/* <input data-cy="submit" type="submit" /> */
+/* <button>Sign up</button>
         </div>
-
-        <div className="submit">
-          {/* <input data-cy="submit" type="submit" /> */}
-          <button>Sign up</button>
-        </div>
-      </form>
-    </>
-  );
-};
-
-export default ClientSignUp;
+      </form> */

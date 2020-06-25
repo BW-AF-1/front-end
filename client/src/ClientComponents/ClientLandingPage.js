@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ClientPage from "./client_page";
+import ClientPage from "./ClientPage";
 import { Button } from "reactstrap";
 
 function ClientLandingPage() {

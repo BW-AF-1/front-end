@@ -3,7 +3,7 @@ import React from "react";
 // import ClientSignUp from "../../ClientSignUp/signup";
 // import ClientLandingPage from "../client_landing";
 import styled from "styled-components";
-import { Button } from "reactstrap";
+import yoga from "./images/yoga.jpg";
 
 const ClientPage = () => {
   const Header = styled.div`
@@ -78,6 +78,14 @@ const ClientPage = () => {
     border-bottom: 1px solid #1f1209;
     box-shadow: 0 20px 10px -5px #bdbdbd;
   `;
+
+const Img = styled.image`
+    width: 100%;
+    padding: .5%;
+`;
+const ImageBackground = styled.image`
+
+`;
   return (
     <>
       {/* getting an error that body cannot be a child of div... */}
@@ -86,8 +94,8 @@ const ClientPage = () => {
       <Header>
         <Title>Anywhere Fitness</Title>
         <Nav>
-          <ul>Help</ul>
-          <ul>About</ul>
+          <ul><Link to ="">Help</Link></ul>
+          <ul><Link to ="">About</Link></ul>
         </Nav>
       </Header>
       <Greet>
@@ -95,20 +103,23 @@ const ClientPage = () => {
         <br />
         Welcome!
       </Greet>
-      <Info>
-        <H1>Browse classes</H1>
-        <P>
-          Our expert instructors conduct classes literally
-          <br />
-          anywhere. Take a yoga class on a mountaintop.
-          <br />
-          Do boot camp on the beach. Go to an
-          <br />
-          abandoned mansion for mat pilates. The
-          <br />
-          options are limitless.
-        </P>
-      </Info>
+      <ImageBackground source = {require('./images/yoga.jpg')}>
+        <Info>
+          <H1>Browse classes</H1>
+          <P>
+            Our expert instructors conduct classes literally
+            <br />
+            anywhere. Take a yoga class on a mountaintop.
+            <br />
+            Do boot camp on the beach. Go to an
+            <br />
+            abandoned mansion for mat pilates. The
+            <br />
+            options are limitless.
+          </P>
+        </Info>
+      </ImageBackground>
+      
       <Hr />
       <Footer>
         <Link to="/ClientSignUp">
@@ -118,6 +129,9 @@ const ClientPage = () => {
           <Button className="forClients">New?</Button>
         </Link>
         <Instructors>For Instructors</Instructors>
+        <Link to="/ClassSearch">
+          <Button className="classSearch">Search Classes</Button>
+        </Link>
       </Footer>
     </>
   );

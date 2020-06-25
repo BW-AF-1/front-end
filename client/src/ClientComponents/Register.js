@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import * as Yup from "yup";
 import { Link, Route } from "react-router-dom";
+import {
+  Name,
+  Password,
+  LogIn,
+  InputName,
+  InputPassword,
+  Input,
+} from "./StyledForm.jsx";
 
 const Register = () => {
   const [post, setPost] = useState();
@@ -46,7 +54,7 @@ const Register = () => {
     axiosWithAuth()
       .post("/clients/register", clientState)
       .then((res) => {
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("token", res.data.password);
         console.log(res.data);
         setPost(res.data);
         setClientState({
@@ -62,39 +70,41 @@ const Register = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="username">
-        <label htmlFor="username">
-          User Name:
-          <input
-            type="text"
-            name="username"
-            value={clientState.name}
-            onChange={handleChange}
-          />
-          {errors.username.length > 2 ? (
-            <p className="error">{errors.name}</p>
-          ) : null}
-        </label>
-      </div>
-      <div className="password">
-        <label htmlFor="password">
-          Password:
-          <input
-            type="password"
-            value={clientState.password}
-            name="password"
-            onChange={handleChange}
-          />
-          {errors.password.length > 2 ? (
-            <p className="error">{errors.password}</p>
-          ) : null}
-        </label>
-      </div>
+      <LogIn>
+        <Name className="username">
+          <label htmlFor="username">
+            User Name:
+            <InputName
+              type="text"
+              name="username"
+              value={clientState.name}
+              onChange={handleChange}
+            />
+            {errors.username.length > 2 ? (
+              <p className="error">{errors.name}</p>
+            ) : null}
+          </label>
+        </Name>
+        <Password className="password">
+          <label htmlFor="password">
+            Password:
+            <InputPassword
+              type="password"
+              value={clientState.password}
+              name="password"
+              onChange={handleChange}
+            />
+            {errors.password.length > 2 ? (
+              <p className="error">{errors.password}</p>
+            ) : null}
+          </label>
+        </Password>
 
-      <div className="submit">
-        {/* <input data-cy="submit" type="submit" /> */}
-        <button>Sign up</button>
-      </div>
+        <div className="submit">
+          <Input data-cy="submit" type="submit" />
+          {/* <Input data-cy="submit" type="submit" /> */}
+        </div>
+      </LogIn>
     </form>
   );
 };

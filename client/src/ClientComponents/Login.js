@@ -47,6 +47,7 @@ const Login = () => {
     axiosWithAuth()
       .post("/clients/login", clientState)
       .then((res) => {
+        localStorage.setItem("token", res.data.message);
         console.log(res.data);
         setPost(res.data);
         setClientState({
