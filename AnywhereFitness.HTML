@@ -12,10 +12,40 @@
     <header>
       <section class='Header-Container'> 
         <h1 class='Main-Header'>ANYWHERE FITNESS</h1>
-        <nav class='Nav-Dropdwn'>
+        <div class='Log'>
+        <form action="/action_page.php" method="get">
+            <label for="fname">Username:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Password:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <button type="submit">Submit</button>            
+          </form>
+        </div>
+        <nav class='dropdown'>            
             <a href="#">Home</a>
+            <style>
+                .dropdown {
+                  position: relative;
+                  display: inline-block;
+                }
+                
+                .dropdown-content {
+                  display: block;
+                  position: absolute;
+                  background-color: #f9f9f9;
+                  min-width: 160px;
+                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                  padding: 12px 16px;
+                  z-index: 1;
+                }
+                
+                .dropdown:hover .dropdown-content {
+                  display: block;
+                }
+                </style>
+
             </nav>
-                <nav class='Nav-Section'>
+                <nav class='dropdown-content'>
                     <a href="#">Profiles</a>
                     <a href="#">Fitness Levels</a>
                     <a href="#">Goals</a>
@@ -76,7 +106,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </section>
-    <section class='Fitness Levels'>    
+    <section class='Fitness-Levels'>    
      <h2 class='FitnessHeader'>Fitness Levels</h2>
       <div class='Beginner'>
         <h2>Beginner</h2>
