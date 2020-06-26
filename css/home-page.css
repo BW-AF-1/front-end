@@ -7,4 +7,6 @@ header h1 {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
+  margin: 5%;
+  padding: 5%;
 }

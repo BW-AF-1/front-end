@@ -311,6 +311,8 @@ section h1 {
   text-align: center;
 }
 h2 {
+  font-family: 'Barrio';
+  font-size: 22px;
   text-decoration: underline;
   font-size: 2rem;
   text-align: center;
@@ -343,10 +345,13 @@ h2 {
   flex-flow: row wrap;
   margin: auto 0;
 }
+.Fitness-Levels .FitnessHeader {
+  margin-left: 35%;
+}
 .Fitness-Levels div {
-  width: 100%;
+  width: 80%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   margin: auto 0;
 }
 header h1 {
