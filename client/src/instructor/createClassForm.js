@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Form, Modal, Dropdown, ButtonGroup} from 'react-bootstrap'
+import {Button, Form, Modal, Dropdown, ButtonGroup} from 'react-bootstrap';
 
 function ModalAfterSubmit(){
     return(
