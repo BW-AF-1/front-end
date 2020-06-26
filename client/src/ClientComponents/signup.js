@@ -5,6 +5,69 @@ import { Link, Route } from "react-router-dom";
 import Client from "./ClientLogin";
 import styled from "styled-components";
 import yoga from "./images/yoga.jpg"
+const Head = styled.div`
+display: flex;
+flex-direction: column;
+background: #ff9233;
+align-items: center;
+padding: 1%;
+`;
+
+const Title = styled.div`
+font-size: 3em;
+`;
+
+const Buttons = styled.div`
+display: flex;
+width: 10%;
+flex-direction: row;
+justify-content: space-around;
+padding: 1em;
+`;
+
+const ClientLog = styled.div`
+display: flex;
+justify-content: center;
+width: 100%;
+font-size: 2em;
+line-height: 4em;
+`;
+
+const Body = styled.div`
+display: flex;
+justify-content: center;
+width: 100%;
+`;
+
+const Image = styled.div`
+display: flex;
+justify-content: center;
+width: 100%;
+font-size: 2em;
+line-height: 4em;
+`;
+
+const HomeButton = styled.button`
+&:hover {
+  background: black;
+  color: white;
+}
+`;
+
+const BackButton = styled.button`
+&:hover {
+  background: black;
+  color: white;
+}
+`;
+const Input = styled.input`
+width: 80%;
+height: 20%;
+`;
+const Button = styled.button`
+width: 80%;
+height: 10%;
+`;
 
 const ClientSignUp = () => {
   const [post, setPost] = useState();
@@ -60,69 +123,7 @@ const ClientSignUp = () => {
         console.log(err);
       });
   };
-  const Head = styled.div`
-    display: flex;
-    flex-direction: column;
-    background: #ff9233;
-    align-items: center;
-    padding: 1%;
-  `;
 
-  const Title = styled.div`
-    font-size: 3em;
-  `;
-
-  const Buttons = styled.div`
-    display: flex;
-    width: 10%;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1em;
-  `;
-
-  const ClientLog = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 2em;
-    line-height: 4em;
-  `;
-
-  const Body = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  `;
-
-  const Image = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 2em;
-    line-height: 4em;
-  `;
-
-  const HomeButton = styled.button`
-    &:hover {
-      background: black;
-      color: white;
-    }
-  `;
-
-  const BackButton = styled.button`
-    &:hover {
-      background: black;
-      color: white;
-    }
-  `;
-  const Input = styled.input`
-    width: 80%;
-    height: 20%;
-  `;
-  const Button = styled.button`
-  width: 80%;
-  height: 10%;
-`;
 
   return (
     <>
