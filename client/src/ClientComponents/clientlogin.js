@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import styled from "styled-components";
 import * as Yup from "yup";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useHistory } from "react-router-dom";
+
 import {
   Name,
   Password,
@@ -13,6 +14,7 @@ import {
 } from "./StyledForm.jsx";
 
 const ClientLogin = () => {
+  const { push } = useHistory();
   const [post, setPost] = useState();
   const [clientState, setClientState] = useState({
     id: Date.now(),
@@ -62,10 +64,11 @@ const ClientLogin = () => {
           username: "",
           password: "",
         });
-      })
-      .catch((err) => {
-        console.log(err);
       });
+    push("/classes");
+    // .catch((err) => {
+    //   console.log(err);
+    // });
   };
 
   return (

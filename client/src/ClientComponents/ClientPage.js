@@ -79,13 +79,11 @@ const ClientPage = () => {
     box-shadow: 0 20px 10px -5px #bdbdbd;
   `;
 
-const Img = styled.image`
+  const Img = styled.image`
     width: 100%;
-    padding: .5%;
-`;
-const ImageBackground = styled.image`
-
-`;
+    padding: 0.5%;
+  `;
+  const ImageBackground = styled.image``;
   return (
     <>
       {/* getting an error that body cannot be a child of div... */}
@@ -94,8 +92,12 @@ const ImageBackground = styled.image`
       <Header>
         <Title>Anywhere Fitness</Title>
         <Nav>
-          <ul><Link to ="">Help</Link></ul>
-          <ul><Link to ="">About</Link></ul>
+          <ul>
+            <Link to="">Help</Link>
+          </ul>
+          <ul>
+            <Link to="">About</Link>
+          </ul>
         </Nav>
       </Header>
       <Greet>
@@ -103,7 +105,7 @@ const ImageBackground = styled.image`
         <br />
         Welcome!
       </Greet>
-      <ImageBackground source = {require('./images/yoga.jpg')}>
+      <ImageBackground source={require("./images/yoga.jpg")}>
         <Info>
           <H1>Browse classes</H1>
           <P>
@@ -119,19 +121,16 @@ const ImageBackground = styled.image`
           </P>
         </Info>
       </ImageBackground>
-      
+
       <Hr />
       <Footer>
-        <Link to="/ClientSignUp">
+        <Link to="/ClientLogin">
           <Button className="forClients">For Clients</Button>
         </Link>
         <Link to="/register">
           <Button className="forClients">New?</Button>
         </Link>
         <Instructors>For Instructors</Instructors>
-        <Link to="/ClassSearch">
-          <Button className="classSearch">Search Classes</Button>
-        </Link>
       </Footer>
     </>
   );

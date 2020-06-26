@@ -2,34 +2,32 @@ import React from "react";
 import { InitialContext } from "../contexts/InitialContext";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
+const ClassContainer = styled.div`
+  border: solid black 2px;
+  background-color: #ff9233;
+  border-radius: 6px;
+`;
 const Session = (props) => {
-  //   console.log(props);
+  console.log("session", props);
 
   return (
     <>
-      <div className="classes">
-        <p>{props.name}</p>
-        {/* <p>{props.type}</p>
-        <p>For {props.duration}</p>
-        <p>At {props.startTime}</p>
-        <p>Intensity: {props.intensityLevel}</p>
-        <p>In {props.location}</p>
+      <ClassContainer className="classes">
+        <h2>{props.name}</h2>
+        <h6>{props.type}</h6>
+        <p>
+          Starts at {props.startTime} and lasts {props.duration} in{" "}
+          {props.location}
+        </p>
+        <p>{props.intensityLevel} intensity level</p>
         <p>{props.attendees} signed up</p>
-        <p>{props.maxClassSize} attendees max</p> */}
-        {/* <div className="reserve"> */}
-        {/* <Link to="/reserved-classes"> */}
-        {/* <button
-            onClick={(e) => {
-              e.stopPropagation();
-              reserveSession(session);
-            }}
-          > */}
-        {/* Reserve */}
-        {/* </button> */}
-        {/* </Link> */}
-        {/* </div> */}
-      </div>
+        <p>{props.maxClassSize} attendees max</p>
+        <button onClick={() => alert("Congratulations! See you in class")}>
+          Reserve a spot
+        </button>
+      </ClassContainer>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import Filter from "./Filter";
+import FilterType from "./Filter";
+
 import Classes from "./Classes";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
@@ -24,13 +25,16 @@ const SearchTest = () => {
   const handleChange = (e) => {
     setWord(e);
     let oldList = sessions.map((session) => {
-      return { name: session.name.toLowerCase(), duration: session.duration };
+      return {
+        duration: session.duration,
+      };
     });
+
     if (word !== "") {
       let newList = [];
 
       newList = oldList.filter((session) =>
-        session.name.includes(word.toLowerCase())
+        session.duration.includes(word.toLowerCase())
       );
       setFilterDisplay(newList);
     } else {
@@ -39,7 +43,11 @@ const SearchTest = () => {
   };
   return (
     <div>
-      <Filter value={word} handleChange={(e) => handleChange(e.target.value)} />
+      <FilterType
+        value={word}
+        handleChange={(e) => handleChange(e.target.value)}
+      />
+
       <Classes sessions={word.length < 1 ? sessions : filterDisplay} />
     </div>
   );

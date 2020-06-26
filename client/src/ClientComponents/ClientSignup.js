@@ -1,11 +1,67 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import * as Yup from "yup";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useHistory } from "react-router-dom";
 import ClientLogin from "./ClientLogin";
 import styled from "styled-components";
+const Head = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #ff9233;
+  align-items: center;
+  padding: 1%;
+`;
+
+const Title = styled.div`
+  font-size: 3em;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  width: 10%;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1em;
+`;
+
+const ClientLog = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 2em;
+  line-height: 4em;
+`;
+
+const Body = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
+
+const Img = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 2em;
+  line-height: 4em;
+`;
+
+const HomeButton = styled.button`
+  &:hover {
+    background: black;
+    color: white;
+  }
+`;
+
+const BackButton = styled.button`
+  &:hover {
+    background: black;
+    color: white;
+  }
+`;
 
 const ClientSignUp = () => {
+  const { push } = useHistory();
   const [post, setPost] = useState();
   const [clientState, setClientState] = useState({
     id: Date.now(),
@@ -46,75 +102,23 @@ const ClientSignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/clients/login", clientState)
+      .post("/clients/register", clientState)
       .then((res) => {
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("token", res.data.password);
         console.log(res.data);
         setPost(res.data);
         setClientState({
           username: "",
           password: "",
         });
-      })
-      .catch((err) => {
-        console.log(err);
+        document.location.reload(true);
       });
+    push("/ClientSignUp");
+    // .catch((err) => {
+    //   console.log(err);
+    // });
   };
-  const Head = styled.div`
-    display: flex;
-    flex-direction: column;
-    background: #ff9233;
-    align-items: center;
-    padding: 1%;
-  `;
 
-  const Title = styled.div`
-    font-size: 3em;
-  `;
-
-  const Buttons = styled.div`
-    display: flex;
-    width: 10%;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1em;
-  `;
-
-  const ClientLog = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 2em;
-    line-height: 4em;
-  `;
-
-  const Body = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  `;
-
-  const Img = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 2em;
-    line-height: 4em;
-  `;
-
-  const HomeButton = styled.button`
-    &:hover {
-      background: black;
-      color: white;
-    }
-  `;
-
-  const BackButton = styled.button`
-    &:hover {
-      background: black;
-      color: white;
-    }
-  `;
   return (
     <>
       <div>
@@ -143,43 +147,3 @@ const ClientSignUp = () => {
 };
 
 export default ClientSignUp;
-
-/* <div className="head">
-          <div className="title">Anywhere Fitness</div>
-        </div>
-        <Client /> */
-
-/* <form onSubmit={handleSubmit}>
-        <div className="username">
-          <label htmlFor="username">
-            User Name:
-            <input
-              type="text"
-              name="username"
-              value={clientState.name}
-              onChange={handleChange}
-            />
-            {errors.username.length > 2 ? (
-              <p className="error">{errors.name}</p>
-            ) : null}
-          </label>
-        </div>
-        <div className="password">
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              value={clientState.password}
-              name="password"
-              onChange={handleChange}
-            />
-            {errors.password.length > 2 ? (
-              <p className="error">{errors.password}</p>
-            ) : null}
-          </label>
-        </div> */
-/* <div className="submit"> */
-/* <input data-cy="submit" type="submit" /> */
-/* <button>Sign up</button>
-        </div>
-      </form> */

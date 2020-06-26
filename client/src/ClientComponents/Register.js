@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import * as Yup from "yup";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useHistory } from "react-router-dom";
+
 import {
+  Container,
   Name,
   Password,
   LogIn,
   InputName,
   InputPassword,
   Input,
+  Greet,
 } from "./StyledForm.jsx";
 
 const Register = () => {
+  const { push } = useHistory();
   const [post, setPost] = useState();
   const [clientState, setClientState] = useState({
     id: Date.now(),
@@ -62,49 +66,53 @@ const Register = () => {
           password: "",
         });
         document.location.reload(true);
-      })
-      .catch((err) => {
-        console.log(err);
       });
+    push("/ClientSignUp");
+    // .catch((err) => {
+    //   console.log(err);
+    // });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <LogIn>
-        <Name className="username">
-          <label htmlFor="username">
-            User Name:
-            <InputName
-              type="text"
-              name="username"
-              value={clientState.name}
-              onChange={handleChange}
-            />
-            {errors.username.length > 2 ? (
-              <p className="error">{errors.name}</p>
-            ) : null}
-          </label>
-        </Name>
-        <Password className="password">
-          <label htmlFor="password">
-            Password:
-            <InputPassword
-              type="password"
-              value={clientState.password}
-              name="password"
-              onChange={handleChange}
-            />
-            {errors.password.length > 2 ? (
-              <p className="error">{errors.password}</p>
-            ) : null}
-          </label>
-        </Password>
+      <Container>
+        <Greet>Register</Greet>
 
-        <div className="submit">
-          <Input data-cy="submit" type="submit" />
-          {/* <Input data-cy="submit" type="submit" /> */}
-        </div>
-      </LogIn>
+        <LogIn>
+          <Name className="username">
+            <label htmlFor="username">
+              <InputName
+                type="text"
+                name="username"
+                value={clientState.name}
+                onChange={handleChange}
+                placeholder="username"
+              />
+              {errors.username.length > 2 ? (
+                <p className="error">{errors.name}</p>
+              ) : null}
+            </label>
+          </Name>
+          <Password className="password">
+            <label htmlFor="password">
+              <InputPassword
+                type="password"
+                value={clientState.password}
+                name="password"
+                onChange={handleChange}
+                placeholder="username"
+              />
+              {errors.password.length > 2 ? (
+                <p className="error">{errors.password}</p>
+              ) : null}
+            </label>
+          </Password>
+
+          <div className="submit">
+            <Input data-cy="submit" type="submit" />
+          </div>
+        </LogIn>
+      </Container>
     </form>
   );
 };

@@ -12,10 +12,12 @@ import Register from "./ClientComponents/Register";
 import Login from "./ClientComponents/Login";
 import ClassSearch from "./ClientComponents/ClassSearch";
 import SearchTest from "./ClientComponents/SearchTest";
+import Classes from "./ClientComponents/Classes";
+import ClientLogin from "./ClientComponents/ClientLogin";
 
 function App() {
   // setting up state and functions for InitialContext
-  const [session, setSession] = useState([]);
+  const [sessions, setSessions] = useState([]);
   const [reservedClasses, setReservedClasses] = useState([]);
 
   const [clients, setClients] = useState([]);
@@ -36,18 +38,18 @@ function App() {
       .get("/classes")
       .then((res) => {
         console.log(res.data);
-        setSession(res.data);
+        setSessions(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  // console.log(session);
+  console.log(sessions);
   return (
     <>
       <Router>
         <div className="App">
-          <InitialContext.Provider value={{ session, setSession }}>
+          <InitialContext.Provider value={{ sessions, setSessions }}>
             {/* <SearchTest /> */}
             <Switch>
               <Route exact path="/">
@@ -62,22 +64,25 @@ function App() {
               <Route exact path="/ClientSignUp">
                 <ClientSignUp />
               </Route>
+              <Route exact path="/ClientLogin">
+                <ClientLogin />
+              </Route>
               <Route exact path="/register">
                 <Register />
               </Route>
-              <Route exact path="/ClientSignUp">
+              {/* <Route exact path="/ClientSignUp">
                 <Login />
+              </Route> */}
+              <Route exact path="/classes">
+                <Classes />
               </Route>
-              <Route exact path="class-list">
-                <ClassList />
-              </Route>
-              <Route exact path="/ClassSearch">
+              {/* <Route exact path="/ClassSearch">
                 <ClassSearch />
-              </Route>
+              </Route> */}
+              <Link to="/">
+                <button className="home-button">Home</button>
+              </Link>
             </Switch>
-            <Link to="/">
-              <button className="home-button">Home</button>
-            </Link>
           </InitialContext.Provider>
         </div>
       </Router>

@@ -1,11 +1,14 @@
 import React from "react";
+import ClassSearch from "./ClassSearch";
 
-const Filter = ({ value, handleChange }) => {
+const FilterType = ({ value, handleChange }) => {
   return (
-    <div>
-      filter: <input value={value} onChange={handleChange} />
-    </div>
+    <>
+      <div>
+        Class type: <input value={value} onChange={handleChange} />
+      </div>
+    </>
   );
 };
 
-export default Filter;
+export default FilterType;
