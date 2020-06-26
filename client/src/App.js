@@ -55,7 +55,7 @@ function App() {
               <Route exact path='/InstructorForm' render={()=><InstructorForm/>}/>
               <Route exact path="/">
                 <Link to="/ClientLandingPage">
-                  <button>Client</button>
+                  <button>Anywhere Fitness</button>
                 </Link>
               </Route>
 
