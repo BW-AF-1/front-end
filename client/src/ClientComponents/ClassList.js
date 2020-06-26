@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { InitialContext } from "../contexts/InitialContext";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import Session from "./Session";
+import ClassSearch from "./ClassSearch"
+
 
 const ClassList = () => {
   const { session, setSession } = useContext(InitialContext);
@@ -14,14 +16,13 @@ const ClassList = () => {
         setSession(res.data);
       })
       .catch((err) => console.log(err.message));
-  }, [setSession]);
+  }, []);
 
   return (
     <>
       <div>
-        {session.map((sesh, i) => (
-          <Session key={i} id={sesh.id} name={sesh.name} />
-        ))}
+          <ClassSearch session={session} />
+        
       </div>
     </>
   );

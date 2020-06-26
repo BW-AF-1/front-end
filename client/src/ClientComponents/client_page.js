@@ -103,7 +103,7 @@ const ImageBackground = styled.image`
         <br />
         Welcome!
       </Greet>
-      <ImageBackground source = {require('./images/yoga.jpg')}>
+      
         <Info>
           <H1>Browse classes</H1>
           <P>
@@ -118,14 +118,14 @@ const ImageBackground = styled.image`
             options are limitless.
           </P>
         </Info>
-      </ImageBackground>
+      
       
       <Hr />
       <Footer>
-        <Link to="/login">
+        <Link to="/ClientSignUp">
           <Button className="forClients">For Clients</Button>
         </Link>
-        <Link to="/register">
+        <Link to="/Register">
           <Button className="forClients">New?</Button>
         </Link>
         <Instructors>For Instructors</Instructors>
