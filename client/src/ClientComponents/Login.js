@@ -3,6 +3,72 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 import * as Yup from "yup";
 import { Link, Route } from "react-router-dom";
 import ClassList from "./ClassList";
+import styled from "styled-components";
+import yoga from "./images/yoga.jpg"
+
+const Head = styled.div`
+display: flex;
+flex-direction: column;
+background: #ff9233;
+align-items: center;
+padding: 1%;
+`;
+
+const Title = styled.div`
+font-size: 3em;
+`;
+
+const Buttons = styled.div`
+display: flex;
+width: 10%;
+flex-direction: row;
+justify-content: space-around;
+padding: 1em;
+`;
+
+const ClientLog = styled.div`
+display: flex;
+justify-content: center;
+width: 100%;
+font-size: 2em;
+line-height: 4em;
+`;
+
+const Body = styled.div`
+display: flex;
+justify-content: center;
+width: 100%;
+`;
+
+const Image = styled.div`
+display: flex;
+justify-content: center;
+width: 100%;
+font-size: 2em;
+line-height: 4em;
+`;
+
+const HomeButton = styled.button`
+&:hover {
+  background: black;
+  color: white;
+}
+`;
+
+const BackButton = styled.button`
+&:hover {
+  background: black;
+  color: white;
+}
+`;
+const Input = styled.input`
+width: 80%;
+height: 20%;
+`;
+const Button = styled.button`
+width: 80%;
+height: 10%;
+`;
 
 const Login = () => {
   const [post, setPost] = useState();
@@ -57,15 +123,33 @@ const Login = () => {
       .catch((err) => {
         console.log(err);
       });
+      
   };
 
   return (
-    <>
+    
+      <div>
+        <Head>
+          <Title>Anywhere Fitness</Title>
+          <Buttons>
+            <Link to="/">
+              <HomeButton className="home">Home</HomeButton>
+            </Link>
+            <Link to="/ClientLandingPage">
+              <BackButton className="back">Back</BackButton>
+            </Link>
+          </Buttons>
+        </Head>
+        <Body>
+          <Image>
+            <img src={yoga} />
+          </Image>
+          <ClientLog>
       <form onSubmit={handleSubmit}>
         <div className="username">
           <label htmlFor="username">
             User Name:
-            <input
+            <Input
               type="text"
               name="username"
               value={clientState.name}
@@ -79,7 +163,7 @@ const Login = () => {
         <div className="password">
           <label htmlFor="password">
             Password:
-            <input
+            <Input
               type="password"
               value={clientState.password}
               name="password"
@@ -92,14 +176,17 @@ const Login = () => {
         </div>
 
         <div className="submit">
-          {/* <input data-cy="submit" type="submit" /> */}
-          <button>Log in</button>
+          <input data-cy="submit" type="submit" />
+          {/* <button>Log in</button> */}
+          
         </div>
       </form>
+      </ClientLog>
+      </Body>
       <div>
         <Link to="/class-list">
           <button className="home-button">Classes</button>
-          <ClassList />
+          {/* <ClassList /> */}
         </Link>
       </div>
       <div>
@@ -107,7 +194,8 @@ const Login = () => {
           <button className="home-button">Register</button>
         </Link>
       </div>
-    </>
+      </div>
+    
   );
 };
 

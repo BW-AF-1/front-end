@@ -178,16 +178,23 @@ const ClientSignUp = () => {
 
         <div className="submit">
           {/* <input data-cy="submit" type="submit" /> */}
-          <Button>Sign up</Button>
+          <Button>Log In</Button>
         </div>
       </form>
             {/* <Client /> */}
           </ClientLog>
         </Body>
-        {/* <div className="head">
-          <div className="title">Anywhere Fitness</div>
-        </div>
-        <Client /> */}
+        <div>
+        <Link to="/class-list">
+          <button className="home-button">Classes</button>
+          {/* <ClassList /> */}
+        </Link>
+      </div>
+      <div>
+        <Link to="/register">
+          <button className="home-button">Register</button>
+        </Link>
+      </div>
       </div>
       
     </>

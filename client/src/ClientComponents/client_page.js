@@ -122,7 +122,7 @@ const ImageBackground = styled.image`
       
       <Hr />
       <Footer>
-        <Link to="/ClientSignUp">
+        <Link to="/Login">
           <Button className="forClients">For Clients</Button>
         </Link>
         <Link to="/Register">

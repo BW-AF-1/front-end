@@ -53,8 +53,7 @@ const Input = styled.input`
 `;
 
 function ClassSearch( props ) {
-  const [classes, setClasses] = useState([]);
-
+    const { session } = props;
   return (
     <>
       <Header>
@@ -72,30 +71,29 @@ function ClassSearch( props ) {
       </Header>
       <hr/>
           <Picker>
-            <Select name="name" value={props.name} placeholder="Class Name">
-                <option value = ''>--Class List--</option>
-                <option value = ''>{props.name}</option>
-                <option value = ''>1 to 3</option>
-                <option value = ''>3 or more</option>
+         
+            <Select name="name"  placeholder="Class Name">
+                {session.map(item =>(
+                    <option>{item.name}</option>
+                ))}
             </Select>
+           
+            
 
-            <Select name="name" value={props.type} placeholder="Class type">
-                <option value = ''>--Class Type--</option>
-                <option value = ''>{props.type}</option>
-                <option value = ''>1 to 3</option>
-                <option value = ''>3 or more</option>
+            <Select name="name" placeholder="Class type">
+                {session.map(item =>(
+                        <option>{item.type}</option>
+                    ))}
             </Select>
-            <Select name="name" value={props.startTime} placeholder="Class Time">
-                <option value = ''>--Class Time--</option>
-                <option value = ''>{props.startTime}</option>
-                <option value = ''>1 to 3</option>
-                <option value = ''>3 or more</option>
+            <Select name="name" placeholder="Class Time">
+                {session.map(item =>(
+                        <option>{item.startTime}</option>
+                    ))}
             </Select>
-            <Select name="name" value={props.duration} placeholder="Class Duration">
-                <option value = ''>--Class Duration--</option>
-                <option value = ''>{props.duration}</option>
-                <option value = ''>1 to 3</option>
-                <option value = ''>3 or more</option>
+            <Select name="name" placeholder="Class Duration">
+                {session.map(item =>(
+                        <option>{item.duration}</option>
+                    ))}
             </Select>
           </Picker>
       
