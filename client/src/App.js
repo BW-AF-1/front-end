@@ -76,9 +76,7 @@ function App() {
               <Route exact path="/classes">
                 <Classes />
               </Route>
-              {/* <Route exact path="/ClassSearch">
-                <ClassSearch />
-              </Route> */}
+
               <Link to="/">
                 <button className="home-button">Home</button>
               </Link>
