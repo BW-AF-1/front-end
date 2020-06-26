@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import * as Yup from "yup";
 import { Link, Route } from "react-router-dom";
-import Client from "./clientlogin";
+import Client from "./ClientLogin";
 import styled from "styled-components";
+import yoga from "./images/yoga.jpg"
 
 const ClientSignUp = () => {
   const [post, setPost] = useState();
@@ -93,7 +94,7 @@ const ClientSignUp = () => {
     width: 100%;
   `;
 
-  const Img = styled.div`
+  const Image = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
@@ -114,6 +115,15 @@ const ClientSignUp = () => {
       color: white;
     }
   `;
+  const Input = styled.input`
+    width: 80%;
+    height: 20%;
+  `;
+  const Button = styled.button`
+  width: 80%;
+  height: 10%;
+`;
+
   return (
     <>
       <div>
@@ -129,25 +139,18 @@ const ClientSignUp = () => {
           </Buttons>
         </Head>
         <Body>
-          <Img>
-            <p>askdjfhaksdhf</p>
-          </Img>
+          <Image>
+            <img src={yoga} />
+          </Image>
           <ClientLog>
-            <Client />
-          </ClientLog>
-        </Body>
-        {/* <div className="head">
-          <div className="title">Anywhere Fitness</div>
-        </div>
-        <Client /> */}
-      </div>
-      <form onSubmit={handleSubmit}>
-        <div className="username">
+          <form onSubmit={handleSubmit}>
+        <div className="userName">
           <label htmlFor="username">
             User Name:
-            <input
+            <Input
               type="text"
               name="username"
+              placeholder="Enter User Name"
               value={clientState.name}
               onChange={handleChange}
             />
@@ -159,8 +162,9 @@ const ClientSignUp = () => {
         <div className="password">
           <label htmlFor="password">
             Password:
-            <input
+            <Input
               type="password"
+              placeholder="Enter User Password"
               value={clientState.password}
               name="password"
               onChange={handleChange}
@@ -173,9 +177,18 @@ const ClientSignUp = () => {
 
         <div className="submit">
           {/* <input data-cy="submit" type="submit" /> */}
-          <button>Sign up</button>
+          <Button>Sign up</Button>
         </div>
       </form>
+            {/* <Client /> */}
+          </ClientLog>
+        </Body>
+        {/* <div className="head">
+          <div className="title">Anywhere Fitness</div>
+        </div>
+        <Client /> */}
+      </div>
+      
     </>
   );
 };

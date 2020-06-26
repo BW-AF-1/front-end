@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import ClientLandingPage from "./ClientComponents/client_landing";
-import ClientSignUp from "./ClientComponents/signup";
+import ClientLandingPage from "./ClientComponents/Client_Landing";
+import ClientSignUp from "./ClientComponents/Signup";
 import axiosWithAuth from "./utils/axiosWithAuth";
 import { InitialContext } from "./contexts/InitialContext";
-import PrivateRoute from "./ClientComponents/signup";
+import PrivateRoute from "./ClientComponents/Signup";
 import ClassList from "./ClientComponents/ClassList";
 import Register from "./ClientComponents/Register";
 import Login from "./ClientComponents/Login";
@@ -79,17 +79,17 @@ function App() {
               <Route exact path="/ClientSignUp">
                 <ClientSignUp />
               </Route>
-              <Route exact path="/register">
+              <Route exact path="/Register">
                 <Register />
               </Route>
-              <Route exact path="/login">
+              <Route exact path="/Login">
                 <Login />
               </Route>
-              <Route exact path="class-list">
+              <Route exact path="/Class-List">
                 <ClassList />
               </Route>
               <Route exact path="/ClassSearch">
-                <ClassSearch />
+                <ClassList />
               </Route>
               <Route exact path='/InstructorDashboard' render={()=><InstructorDashboard/>}/>
             </Switch>
