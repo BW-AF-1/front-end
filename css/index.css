@@ -414,3 +414,23 @@ footer img{
   justify-content: center;
 }
 
+@media(max-width: 500px) {
+ html{
+  background-color: grey;
+ }
+ .Main-Container {
+   background-image: image('photo-tall-treeline.jpg');
+ }
+ nav a {
+  color: white;
+ }  
+ h2 {
+   color: #FF6900;
+ } 
+ p {
+   color: white;
+ }
+ 
+}
+
+
