@@ -270,13 +270,14 @@ html,
 body {
   height: 100%;
 }
-@media (min-width: 500px) {
-  html,
-  body {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-  }
+
+
+form {
+  border: 2px solid black;
+  border-radius: 5%;
+  margin-left: 1%;
+  padding: 2%;
+  line-height: 0.2;
 }
 button {
   margin: auto 0;
@@ -284,29 +285,37 @@ button {
   border-radius: 1rem;
   border-color: black;
 }
-form {
-  border: 2px solid black;
-  border-radius: 5%;
-  margin-left: 5%;
-  padding: 2%;
-  line-height: 0.2;
+.Main-Header {
+  display: block;
+  text-align: center;
+  font-size: larger;
 }
 nav {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  padding-bottom: 5%;
+  border-bottom: 1px solid #FF6900;
+  background-image: url("photo-tall-treeline.jpg");
 }
 nav a {
   display: flex;
+  margin: auto;
   flex-flow: row nowrap;
-  width: 100%;
-  margin-left: 15%;
   text-decoration: none;
   color: black;
   justify-content: space-evenly;
 }
-nav:hover {
+a:hover {
   color: #FF6900;
+}
+.Main-Container {
+  width: 100%;
+  flex-flow: row wrap;
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section {
   width: 100%;
@@ -325,41 +334,64 @@ h2 {
   text-decoration: underline;
   font-size: 2rem;
   text-align: center;
-  margin: auto 0;
+  margin: auto;
   padding: 5%;
 }
 .Mission-Content {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  margin: auto 0;
+  margin: auto;
+  padding-top: 10%;
 }
-.Mission-Content h1 {
+.Mission-Content h2 {
   display: block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  
 }
 .Mission-Content li {
   display: flex;
-  flex-flow: nowrap;
-  margin: 5%;
-  justify-items: center;
+  flex-flow: row nowrap;
+  margin: 3%;
+  text-align: center;
   font-size: x-large;
   color: #FF6900;
+}
+.Person {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  line-height: 2;
+  border: 2px solid grey;
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+}
+
+.Person h3 {
+  text-decoration: underline;
+  font-size: medium;
+}
+.Person p {
+  padding: 4%;
 }
 .Fitness-Levels {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  margin: auto 0;
+  padding-top: 10%;
+}
+.Fitness-Levels .FitnessHeader{
+  font-size: larger;
+  margin: auto;
+  display: flex;
+  
 }
 .Fitness-Levels h2 {
   font-size: medium;
   margin: auto 0;
 }
-.Fitness-Levels h2 p {
-  text-align: right;
+.Fitness-Levels p {
+  width: 98%;
 }
 .Fitness-Levels h2 .FitnessHeader {
   margin: auto;
@@ -369,25 +401,16 @@ h2 {
   display: flex;
   flex-flow: row nowrap;
 }
-.Fitness-Levels header {
-  background-image: url('photo-tall-treeline.jpg');
-}
-header h1 .Main-Header2 {
-  margin: auto 0;
+footer p {
   text-align: center;
-  font-size: 3rem;
 }
-.Main-Container {
-  width: 100%;
-  flex-flow: row wrap;
-  margin: 5%;
-  padding: 5%;
-  display: flex;
+footer img{
+  width: 30%;
+  display:flex;
+  flex-flow: row nowrap;
+  justify-items: space-between;
+}
+.Copyright {
   justify-content: center;
-  align-items: center;
 }
-.Person {
-  width: 45%;
-  display: flex;
-  line-height: 2;
-}
+
