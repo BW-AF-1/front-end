@@ -270,6 +270,14 @@ html,
 body {
   height: 100%;
 }
+@media (min-width: 500px) {
+  html,
+  body {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
 button {
   margin: auto 0;
   background-color: #FF6900;
@@ -287,22 +295,23 @@ nav {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  margin: auto 0;
 }
 nav a {
   display: flex;
   flex-flow: row nowrap;
-  margin: auto 0;
   width: 100%;
+  margin-left: 15%;
   text-decoration: none;
   color: black;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+nav:hover {
+  color: #FF6900;
 }
 section {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  margin: auto 0;
   margin-top: 10%;
 }
 section h1 {
@@ -345,22 +354,40 @@ h2 {
   flex-flow: row wrap;
   margin: auto 0;
 }
-.Fitness-Levels .FitnessHeader {
-  margin-left: 35%;
-}
-.Fitness-Levels div {
-  width: 80%;
-  display: flex;
-  flex-flow: row nowrap;
+.Fitness-Levels h2 {
+  font-size: medium;
   margin: auto 0;
 }
-header h1 {
+.Fitness-Levels h2 p {
+  text-align: right;
+}
+.Fitness-Levels h2 .FitnessHeader {
+  margin: auto;
+}
+.Fitness-Levels h2 .FitnessHeader div {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.Fitness-Levels header {
+  background-image: url('photo-tall-treeline.jpg');
+}
+header h1 .Main-Header2 {
   margin: auto 0;
   text-align: center;
   font-size: 3rem;
 }
 .Main-Container {
   width: 100%;
-  display: flex;
   flex-flow: row wrap;
+  margin: 5%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Person {
+  width: 45%;
+  display: flex;
+  line-height: 2;
 }
