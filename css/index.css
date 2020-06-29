@@ -1,3 +1,4 @@
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -133,142 +134,11 @@ table {
 html,
 body {
   height: 100%;
-}
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* Set every element's box-sizing to border-box */
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  height: 100%;
+  background-image: url("https://www.google.com/search?q=free+workout+images&rlz=1C1SQJL_enUS895US896&sxsrf=ALeKk02E2mTFYGmBmB6lLExZcosMrcjiNA:1593401916713&tbm=isch&source=iu&ictx=1&fir=1JEUzJHmM6ZjHM%252C-XD20xhPyi7cwM%252C_&vet=1&usg=AI4_-kQraz-ciZc6cvWwY3u5sYty77CGRQ&sa=X&ved=2ahUKEwiRjevZjKbqAhVRnOAKHQ7zBVoQ9QEwAHoECAoQIw#imgrc=1JEUzJHmM6ZjHM");
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 
 
@@ -278,11 +148,14 @@ form {
   margin-left: 1%;
   padding: 2%;
   line-height: 0.2;
+  text-align: center;
+  
 }
 button {
-  margin: auto 0;
+  margin: auto;
+  padding: 1%;
   background-color: #FF6900;
-  border-radius: 1rem;
+  border-radius: 3px;
   border-color: black;
 }
 .Main-Header {
@@ -296,7 +169,7 @@ nav {
   flex-flow: row nowrap;
   padding-bottom: 5%;
   border-bottom: 1px solid #FF6900;
-  background-image: url("photo-tall-treeline.jpg");
+  
 }
 nav a {
   display: flex;
@@ -353,7 +226,7 @@ h2 {
   display: flex;
   flex-flow: row nowrap;
   margin: 3%;
-  text-align: center;
+  align-items: center;
   font-size: x-large;
   color: #FF6900;
 }
@@ -430,7 +303,14 @@ footer img{
  p {
    color: white;
  }
- 
+ .Person {
+  border: 2px solid #FF6900;
+ }
+ .Goals-Img { 
+ display: flex;
+ flex-flow: row nowrap;
+ justify-content: space-evenly;
+ }
 }
 
 
